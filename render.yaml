@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: mon-site-web
+    env: java
+    buildCommand: chmod +x gradlew && ./gradlew assemble
+    startCommand: ./gradlew bootRun
