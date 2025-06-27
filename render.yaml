@@ -1,8 +1,12 @@
 services:
   - type: web
     name: mon-site-web
-    env: java
-    buildCommand: chmod +x gradlew && ./gradlew assemble
+    env: java11
+    buildCommand: |
+      echo "JAVA_HOME=$JAVA_HOME"
+      java -version
+      chmod +x gradlew
+      ./gradlew assemble
     startCommand: ./gradlew bootRun
     envVars:
       - key: JAVA_HOME
